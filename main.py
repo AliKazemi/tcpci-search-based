@@ -11,6 +11,8 @@ import scenarios
 from deap import base
 from deap import creator
 from deap import tools
+from deap import algorithms
+
 from algorithm import eaSimple
 from reward import RNFailReward, RRankReward, TimeRankReward
 from utils import sort_update_actions
@@ -169,6 +171,10 @@ if __name__ == "__main__":
     ap.add_argument('-o', '--output_dir', default=DEFAULT_EXPERIMENT_DIR)
 
     args = ap.parse_args()
+    print(args.dataset_dir)
+    print(args.datasets)
+    print(args.sched_time_ratio)
+    print(args.output_dir)
 
     time_ratio = [float(t) for t in args.sched_time_ratio]
 
